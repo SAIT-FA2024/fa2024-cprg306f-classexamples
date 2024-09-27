@@ -18,6 +18,9 @@ export default function Home() {
         <li><Link href="./week-2/" className={linkStyles}>Week 2 - Introduction to React</Link></li>
         <li><Link href="./week-3/objects/" className={linkStyles}>Week 3 - Objects</Link></li>
         <li><Link href="./week-3/props/" className={linkStyles}>Week 3 - Props</Link></li>
+        <li><Link href="./week-4/functions/" className={linkStyles}>Week 4 - Functions</Link></li>
+        <li><Link href="./week-4/simple-counter/" className={linkStyles}>Week 4 - Simple Counter</Link></li>
+        <li><Link href="./week-4/advanced-counter/" className={linkStyles}>Week 4 - Counter with Props</Link></li>
       </ul>
     </main>
   );
