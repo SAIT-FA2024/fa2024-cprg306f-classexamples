@@ -22,6 +22,7 @@ export default function Home() {
         <li><Link href="./week-4/simple-counter/" className={linkStyles}>Week 4 - Simple Counter</Link></li>
         <li><Link href="./week-4/advanced-counter/" className={linkStyles}>Week 4 - Counter with Props</Link></li>
         <li><Link href="./week-5/" className={linkStyles}>Week 5 - Managed Form</Link></li>
+        <li><Link href="./week-7/" className={linkStyles}>Week 7 - Managing State</Link></li>
       </ul>
     </main>
   );
