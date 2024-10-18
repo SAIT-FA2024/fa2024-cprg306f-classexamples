@@ -1,5 +1,5 @@
 
-export default function DogCard({dogObj}) {
+export default function DogCard({dogObj, removeDogFunc}) {
 
     const {id, name, breed, photoUrl} = dogObj;
 
@@ -12,7 +12,12 @@ export default function DogCard({dogObj}) {
                 <h3 className="text-xl">{name}</h3>
                 <p className="text-lg">ID: {id}</p>
                 <p className="text-lg">Breed: {breed}</p>
-                <button className="text-sm bg-red-700 text-white rounded px-1">Remove</button>
+                <button
+                    type="button"
+                    data-dog-id={id}
+                    onClick={removeDogFunc}
+                    className="text-sm bg-red-700 text-white rounded px-1"
+                >Remove</button>
             </div>
         </div>
     );

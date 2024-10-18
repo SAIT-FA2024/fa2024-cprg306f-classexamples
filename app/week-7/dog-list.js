@@ -1,8 +1,9 @@
+"use client"
 
 import { useState } from "react";
 import DogCard from "./dog-card";
 
-export default function DogList({ listOfDogs }) {
+export default function DogList({ listOfDogs, removeDogFunc }) {
 
     const [sortBy, setSortBy] = useState("id");
 
@@ -37,7 +38,7 @@ export default function DogList({ listOfDogs }) {
             <div className="grid grid-cols-2 gap-5">
                 {
                     listOfDogs.map((dog) => (
-                        <DogCard dogObj={dog} key={dog.id} />
+                        <DogCard dogObj={dog} key={dog.id} removeDogFunc={removeDogFunc} />
                     ))
                 }
             </div>
