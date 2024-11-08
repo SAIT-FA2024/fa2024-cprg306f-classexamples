@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useUserAuth } from "./_utils/auth-context";
+import { useEffect, useState } from "react";
+import { dbGetAllBlogPostsByUser } from "./_services/blog-service";
 
 export default function SignInPage() {
 
@@ -23,7 +25,12 @@ export default function SignInPage() {
         }
     }
 
-    // console.dir(user);
+    const [blogPostList, setBlogPostList] = useState([]);
+    useEffect( () => {
+        if (user) {
+            dbGetAllBlogPostsByUser(user.uid, setBlogPostList);
+        }
+    }, [user] );
 
     return (
         <main className="m-5">
@@ -41,7 +48,12 @@ export default function SignInPage() {
                     <section>
                         <h2>My Blog Posts</h2>
                         <ul>
-
+                            {
+                                blogPostList.map( (post) => {
+                                    let postUrl = `/week-10/${post.id}`;
+                                    return( <li key={post.id}><Link href={postUrl}>{post.title}</Link></li> )
+                                } )
+                            }
                         </ul>
                     </section>
                     <div>
